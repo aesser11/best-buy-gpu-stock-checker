@@ -24,10 +24,12 @@ while ($dog -eq "dog") {
         $gpu = invoke-restmethod "https://api.bestbuy.com/v1/products/$sku.json?show=$params&apiKey=$apiKey"
         $gpuName = $gpu.name
         $gpuOnlineAvailability = $gpu.onlineAvailability
+        $gpuUrl = $gpu.url
+        $gpuAddToCartUrl = $gpu.addToCartUrl
         if ($gpu.onlineAvailability -eq $true) {
             Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Green -BackgroundColor black
-            Start-Process "$gpu.url"
-            Start-Process "$gpu.addToCartUrl"
+            Start-Process "$gpuAddToCartUrl"
+            #Start-Process "$gpuUrl"
             #SEND NOTIFICATION, make system sound? send email with url link? discord message with url link? 
             pause
         }
