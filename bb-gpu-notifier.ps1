@@ -11,11 +11,13 @@
 # else check for gpus continuously
 ########## pseudo code ###############
 $apiKey = "YourApiKeyHere"
+$discordWebhook = 'https://discord.com/api/webhooks/{webhook.id}/{webhook.token}'
 $params = "sku,name,salePrice,onlineAvailability,url,addToCartUrl,"
 $skuList = @(
     "6439402", #RTX 3060Ti
     "6429442", #RTX 3070
     "6429440", #RTX 3080
+    #"5748618", #Switch Pro Controller for testing
     "6429434"  #RTX 3090
 )
 $dog = "dog"
@@ -30,7 +32,16 @@ while ($dog -eq "dog") {
             Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Green -BackgroundColor black
             Start-Process "$gpuAddToCartUrl"
             #Start-Process "$gpuUrl"
-            #SEND NOTIFICATION, make system sound? send email with url link? discord message with url link? 
+            #discord webhook
+
+$content = @"
+FYI $gpuName stock $gpuOnlineAvailability at
+$gpuAddToCartUrl
+"@
+
+            $payload = [PSCustomObject]@{content = $content}
+            Invoke-RestMethod -Uri $discordWebhook -Method Post -Body ($payload | ConvertTo-Json) -ContentType 'Application/Json'
+
             pause
         }
         Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Red -BackgroundColor black
