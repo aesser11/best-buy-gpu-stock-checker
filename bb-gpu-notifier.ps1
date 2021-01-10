@@ -35,7 +35,7 @@ while ($dog -eq "dog") {
             #discord webhook
 
 $content = @"
-FYI $gpuName stock $gpuOnlineAvailability at
+$gpuName stock $gpuOnlineAvailability
 $gpuAddToCartUrl
 "@
 
