@@ -22,6 +22,7 @@ $skuList = @(
     "6429434", #RTX 3090
     #EVGA cards
     "6444445", #EVGA RTX 3060Ti xc gaming
+    "6444449", #EVGA RTX 3060Ti ftw3 gaming
     "6444444", #EVGA RTX 3060Ti ftw3 gaming
     "6439299", #EVGA RTX 3070 xc3 ultra
     "6432400", #EVGA RTX 3080 xc3 ultra
