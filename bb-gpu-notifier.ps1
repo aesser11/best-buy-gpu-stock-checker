@@ -14,11 +14,18 @@ $apiKey = "YourApiKeyHere"
 $discordWebhook = 'https://discord.com/api/webhooks/{webhook.id}/{webhook.token}'
 $params = "sku,name,salePrice,onlineAvailability,url,addToCartUrl,"
 $skuList = @(
+    #"5748618", #Switch Pro Controller for testing
+    #FE cards
     "6439402", #RTX 3060Ti
     "6429442", #RTX 3070
     "6429440", #RTX 3080
-    #"5748618", #Switch Pro Controller for testing
-    "6429434"  #RTX 3090
+    "6429434", #RTX 3090
+    #EVGA cards
+    "6444445", #EVGA RTX 3060Ti xc gaming
+    "6444444", #EVGA RTX 3060Ti ftw3 gaming
+    "6439299", #EVGA RTX 3070 xc3 ultra
+    "6432400", #EVGA RTX 3080 xc3 ultra
+    "6434198" #EVGA RTX 3090 xc3 ultra
 )
 $dog = "dog"
 while ($dog -eq "dog") {
