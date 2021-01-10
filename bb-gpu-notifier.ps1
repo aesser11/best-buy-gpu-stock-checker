@@ -37,6 +37,7 @@ while ($dog -eq "dog") {
 $content = @"
 $gpuName stock $gpuOnlineAvailability
 $gpuAddToCartUrl
+\@user to get userid to paste e.g. "<@228269886437064704>"
 "@
 
             $payload = [PSCustomObject]@{content = $content}
