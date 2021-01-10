@@ -56,6 +56,8 @@ $gpuAddToCartUrl
             pause
         }
         Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Red -BackgroundColor black
+        #5 calls per second maximum rate
+        #50,000 api calls per day or 0.5787 calls per second or 1 call every 1.728 seconds (set to 1 call every 2 seconds)
         Start-Sleep -m 2000
     }
 }
