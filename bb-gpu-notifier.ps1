@@ -32,6 +32,8 @@ $dog = "dog"
 while ($dog -eq "dog") {
     foreach ($sku in $skuList) {
         $gpu = invoke-restmethod "https://api.bestbuy.com/v1/products/$sku.json?show=$params&apiKey=$apiKey"
+        #$gpu = invoke-restmethod https://api.bestbuy.com/v1/products(sku in($skuList))?show=$params&apiKey=YourAPIKey
+        #better method, but figure out how to add gpu to cart that where onlineAvailability==$true
         $gpuName = $gpu.name
         $gpuOnlineAvailability = $gpu.onlineAvailability
         $gpuUrl = $gpu.url
@@ -54,6 +56,6 @@ $gpuAddToCartUrl
             pause
         }
         Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Red -BackgroundColor black
-        Start-Sleep -m 500
+        Start-Sleep -m 2000
     }
 }
