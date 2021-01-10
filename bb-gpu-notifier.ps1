@@ -46,6 +46,6 @@ $gpuAddToCartUrl
             pause
         }
         Write-Host "$gpuName online availability = $gpuOnlineAvailability" -ForegroundColor Red -BackgroundColor black
-        Start-Sleep -m 2000
+        Start-Sleep -m 500
     }
 }
