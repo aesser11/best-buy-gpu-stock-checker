@@ -35,7 +35,7 @@ while ($dog -eq "dog") {
             #discord webhook
 
 $content = @"
-\@user to get userid to paste e.g. "<@228269886437064704>"
+\@user to get userid to paste e.g. "<@012345678901234567>"
 $gpuName stock $gpuOnlineAvailability
 $gpuAddToCartUrl
 "@
