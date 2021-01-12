@@ -28,11 +28,14 @@ $skuList = @(
     "6432400", #EVGA RTX 3080 xc3 ultra
     "6434198" #EVGA RTX 3090 xc3 ultra
 )
+#$skuList = "5748618,6439402,6429442,6429440,6429434"
+#return $availableGpu = $gpu.products.product {where $gpu.products.product.onlineAvailability==$true}
+#write-host, start-process, invoke-restmethod
 $dog = "dog"
 while ($dog -eq "dog") {
     foreach ($sku in $skuList) {
         $gpu = invoke-restmethod "https://api.bestbuy.com/v1/products/$sku.json?show=$params&apiKey=$apiKey"
-        #$gpu = invoke-restmethod https://api.bestbuy.com/v1/products(sku in($skuList))?show=$params&apiKey=YourAPIKey
+        #$gpu = invoke-restmethod "https://api.bestbuy.com/v1/products(sku in($skuList))?show=$params&apiKey=YourAPIKey"
         #better method, but figure out how to add gpu to cart that where onlineAvailability==$true
         $gpuName = $gpu.name
         $gpuOnlineAvailability = $gpu.onlineAvailability
